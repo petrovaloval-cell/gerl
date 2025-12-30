@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12 наших месяцев | Для тебя</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Marck+Script&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="heart.ico">
+</head>
+<body>
+    <!-- Музыкальный плеер (скрыт, но работает) -->
+    <audio id="bg-music" loop>
+        <source src="https://assets.mixkit.co/music/preview/mixkit-sweet-and-soft-70-113.mp3" type="audio/mpeg">
+    </audio>
+    <div class="music-control" onclick="toggleMusic()">
+        <i id="music-icon" class="fas fa-volume-mute"></i>
+    </div>
+
+    <!-- Заставка -->
+    <section class="hero">
+        <div class="snowflakes"></div>
+        <div class="container">
+            <div class="heart-pulse">❤</div>
+            <h1 class="title">Календарь <span class="highlight">наших</span> месяцев</h1>
+            <p class="subtitle">Год, который изменил всё. 12 историй, которые теперь навсегда.</p>
+            <button class="start-btn" onclick="startJourney()">
+                <i class="fas fa-calendar-alt"></i> Перелистнуть страницу
+            </button>
+            <div class="scroll-hint">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Календарь -->
+    <section class="calendar-section" id="calendar">
+        <div class="container">
+            <h2><i class="fas fa-heart"></i> Наша хроника</h2>
+            <p class="section-subtitle">Нажми на любой месяц, чтобы оживить воспоминания</p>
+            
+            <div class="calendar-grid">
+                <!-- Месяцы будут сгенерированы скриптом -->
+            </div>
+
+            <!-- Окно с деталями месяца -->
+            <div id="month-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close-modal" onclick="closeModal()">&times;</span>
+                    <div class="modal-body">
+                        <div class="modal-photo">
+                            <img id="modal-img" src="" alt="Наше фото">
+                            <div class="photo-frame"></div>
+                        </div>
+                        <div class="modal-text">
+                            <h3 id="modal-title">Январь: Наша встреча</h3>
+                            <div class="date-badge" id="modal-date">15 января</div>
+                            <p id="modal-description">Здесь появится ваше личное описание этого месяца...</p>
+                            <div class="quote" id="modal-quote">"Ты сказала то, что изменило всё..."</div>
+                            <div class="memory-counter">
+                                <i class="far fa-image"></i>
+                                <span id="modal-photos">3</span> фото в памяти
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секретное письмо -->
+    <section class="secret-section">
+        <div class="container">
+            <div class="envelope" onclick="openEnvelope()">
+                <div class="envelope-flap"></div>
+                <div class="envelope-body">
+                    <i class="fas fa-lock"></i>
+                    <p>Секретное письмо</p>
+                    <small>Только для тебя</small>
+                </div>
+            </div>
+            <p class="hint">Нажми на конверт</p>
+            
+            <div class="secret-modal" id="secret-modal">
+                <div class="secret-content">
+                    <h3><i class="fas fa-key"></i> Введи код доступа</h3>
+                    <p>Подсказка: день, когда ты появилась в моей жизни (ДДММ)</p>
+                    <div class="code-input">
+                        <input type="password" id="secret-code" maxlength="4" placeholder="0000">
+                        <button onclick="checkCode()"><i class="fas fa-unlock"></i></button>
+                    </div>
+                    <p class="error-msg" id="code-error"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Письмо -->
+    <section class="letter-section" id="letter" style="display:none;">
+        <div class="letter-paper">
+            <div class="letter-header">
+                <h2><i class="fas fa-feather-alt"></i> Для моей единственной</h2>
+                <div class="letter-date">31 декабря 2024 года</div>
+            </div>
+            <div class="letter-body">
+                <p>Любимая,</p>
+                <p>Этот календарь — лишь малая часть тех чувств, которые ты во мне разбудила.</p>
+                <p>Каждый месяц с тобой был как новая глава в книге, которую я хочу перечитывать вечно.</p>
+                <div class="heart-illustration">♡</div>
+                <p>В январе ты вошла в мою жизнь случайно, а в декабре стала её смыслом.</p>
+                <p>Спасибо тебе за каждый смех, за терпение, за нежность и за то, что ты просто есть.</p>
+                <p>Следующий год я хочу заполнять новыми историями — только с тобой.</p>
+                <p class="signature">Твой навсегда.</p>
+                <button class="print-btn" onclick="window.print()">
+                    <i class="fas fa-print"></i> Сохранить это письмо
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer>
+        <div class="container">
+            <p>Создано с <i class="fas fa-heartbeat" style="color:#ff4757;"></i> для самой особенной девушки</p>
+            <p class="footer-note">Этот сайт — цифровая капсула наших чувств. © 2024</p>
+            <div class="fireworks"></div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
