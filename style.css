@@ -494,3 +494,21 @@ footer {
         right: 20px;
     }
 }
+.song-title {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.music-control:hover .song-title {
+    opacity: 1;
+}
