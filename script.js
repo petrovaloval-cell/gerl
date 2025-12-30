@@ -1,3 +1,60 @@
+// YouTube плеер
+let youtubePlayer;
+let isYouTubePlaying = false;
+
+// Загружаем YouTube API
+function loadYouTubeAPI() {
+    const tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    const firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+}
+
+// Инициализация плеера
+function onYouTubeIframeAPIReady() {
+    youtubePlayer = new YT.Player('youtube-player', {
+        events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+        }
+    });
+}
+
+function onPlayerReady(event) {
+    console.log("YouTube плеер готов");
+    // Автозапуск (может быть заблокирован браузером)
+    setTimeout(() => {
+        event.target.playVideo().catch(e => {
+            console.log("Автозапуск YouTube заблокирован");
+        });
+    }, 2000);
+}
+
+function onPlayerStateChange(event) {
+    if (event.data == YT.PlayerState.PLAYING) {
+        isYouTubePlaying = true;
+        document.getElementById('music-icon').className = 'fas fa-volume-up';
+        document.querySelector('.music-control').classList.add('pulse');
+    } else if (event.data == YT.PlayerState.PAUSED) {
+        isYouTubePlaying = false;
+        document.getElementById('music-icon').className = 'fas fa-volume-mute';
+        document.querySelector('.music-control').classList.remove('pulse');
+    }
+}
+
+// Управление YouTube музыкой
+function toggleMusic() {
+    if (youtubePlayer) {
+        if (isYouTubePlaying) {
+            youtubePlayer.pauseVideo();
+        } else {
+            youtubePlayer.playVideo();
+        }
+    }
+}
+
+// Вызываем загрузку API при загрузке страницы
+window.addEventListener('load', loadYouTubeAPI);
 // Данные календаря - ЗДЕСЬ ВЫ МЕНЯЕТЕ ВСЁ ПОД СЕБЯ!
 const monthsData = [
     {
