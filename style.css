@@ -451,28 +451,43 @@ body {
 }
 
 /* Футер */
-footer {
-    background: #4a044e;
+.site-footer {
+    background: var(--primary-color);
     color: white;
-    text-align: center;
-    padding: 50px 0;
-    margin-top: 100px;
-    position: relative;
+    padding: 60px 0 30px;
 }
 
-/* Снежинки */
-.snowflakes, .fireworks {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
+.heart-animation {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    animation: heartbeat 2s infinite;
 }
 
-.snowflake, .firework {
-    position: absolute;
-    background: white;
-    border-radius: 50%;
-    opacity: 0.8;
+.promise {
+    font-size: 1.3rem;
+    color: var(--gold-color);
+    margin-top: 15px;
+}
+
+.countdown-timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.countdown-item .number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--gold-color);
+}
+
+.final-note {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    color: var(--gold-color);
+    font-style: italic;
 }
 
 /* Адаптивность */
