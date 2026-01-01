@@ -450,6 +450,20 @@ body {
     min-height: 20px;
 }
 
+.year-wishes {
+    list-style: none;
+    margin: 30px 0;
+    padding: 0;
+}
+
+.year-wishes li {
+    padding: 15px 0;
+    border-bottom: 1px dashed #ddd;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
 /* Футер */
 .site-footer {
     background: var(--primary-color);
