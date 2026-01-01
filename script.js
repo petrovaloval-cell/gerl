@@ -186,9 +186,9 @@ const monthsData = [
         date: "31 декабря",
         title: "Обещание вечности",
         description: "Под бой курантов мы загадали желания. Моё было простым — чтобы каждый следующий Новый год встречать с тобой. Потому что ты — моё самое большое чудо.",
-        quote: "«Главное воспоминание месяца - »",
+        quote: "«Главное воспоминание месяца - МЫ»",
         photos: 18,
-        image: "https://images.unsplash.com/photo-1579546929662-711aa81148cf?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80",
+        image: "https://i.yapx.ru/cdy1K.jpg",
         color: "#FF9E00"
     }
 ];
