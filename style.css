@@ -503,6 +503,11 @@ body {
 }
 
 /* Футер */
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
 .site-footer {
     background: var(--primary-color);
     color: red;
