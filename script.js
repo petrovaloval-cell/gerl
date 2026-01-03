@@ -261,16 +261,7 @@ let isMusicPlaying = false;
 const music = document.getElementById('bg-music');
 const musicIcon = document.getElementById('music-icon');
 
-function toggleMusic() {
-    if (isMusicPlaying) {
-        music.pause();
-        musicIcon.className = 'fas fa-volume-mute';
-    } else {
-        music.play().catch(e => console.log("Автозапуск заблокирован браузером"));
-        musicIcon.className = 'fas fa-volume-up';
-    }
-    isMusicPlaying = !isMusicPlaying;
-}
+
 
 // Секретный код (замени 0101 на настоящую дату ДДММ)
 const SECRET_CODE = "1906"; // Например, 15 марта = 1503
@@ -380,10 +371,6 @@ function createConfetti() {
     }
 }
 
-function getRandomColor() {
-    const colors = ['#FF6B93', '#FF8E53', '#36D7B7', '#9B5DE5', '#00BBF9'];
-    return colors[Math.floor(Math.random() * colors.length)];
-}
 
 // Закрытие модального окна при клике вне его
 window.onclick = function(event) {
