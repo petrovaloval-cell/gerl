@@ -198,7 +198,7 @@ document.addEventListener('DOMContentLoaded', function() {
     createCalendar();
     createSnowflakes();
     createFireworks();
-    //startCountdown();
+    startCountdown();
 });
 
 // Создание календаря
