@@ -347,7 +347,12 @@ body {
     color: white;
     text-align: center;
 }
-
+.hint {
+    text-align: center;
+    color: #888;
+    font-style: italic;
+    margin-top: 10px;
+}
 /* Письмо */
 .letter-paper {
     max-width: 800px;
