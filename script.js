@@ -381,3 +381,16 @@ window.onclick = function(event) {
         closeModal();
     }
 };
+// Отладка отсчёта
+console.log("Скрипт загружен!");
+console.log("Дни элемент:", document.getElementById('days'));
+console.log("Часы элемент:", document.getElementById('hours'));
+console.log("Минуты элемент:", document.getElementById('minutes'));
+
+// Принудительный запуск отсчёта
+setTimeout(() => {
+    if (typeof startCountdown === 'function') {
+        startCountdown();
+        console.log("Отсчёт запущен!");
+    }
+}, 1000);
