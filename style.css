@@ -510,7 +510,7 @@ body {
 }
 .site-footer {
     background: var(--primary-color);
-    color: red;
+    color: white;
     padding: 60px 0 30px;
 }
 
