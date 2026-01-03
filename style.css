@@ -539,7 +539,12 @@ body {
     font-weight: bold;
     color: var(--gold-color);
 }
-
+.countdown-separator {
+    color: var(--gold-color);
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0 5px;
+}
 .final-note {
     margin-top: 20px;
     font-size: 1.1rem;
