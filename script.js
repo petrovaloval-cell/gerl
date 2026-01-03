@@ -257,8 +257,6 @@ function startJourney() {
 }
 
 // Музыка
-let isMusicPlaying = false;
-const music = document.getElementById('bg-music');
 const musicIcon = document.getElementById('music-icon');
 
 
@@ -327,6 +325,10 @@ function createSnowflakes() {
 }
 
 // Фейерверк
+function getRandomColor() {
+    const colors = ['#FF6B93', '#FF8E53', '#36D7B7', '#9B5DE5', '#00BBF9'];
+    return colors[Math.floor(Math.random() * colors.length)];
+}
 function createFireworks() {
     const container = document.querySelector('.fireworks');
     for (let i = 0; i < 20; i++) {
